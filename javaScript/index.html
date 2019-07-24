@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+        <div id="app">
+            <button onmouseover="mostrarAlertaButton()">
+                Passar mouse
+            </button>
+            <input onkeypress="mostrarAlertaInput()"/>
+            <div>
+                <input type="text" name="name" id="name" class="nome"/>
+                <button>
+                    Adicionar
+                </button>
+            </div>
+            <div>
+                <input type="text" name="dados" />
+                <button class="botao">
+                    Clicar
+                </button>
+            </div>
+            <div id="criarElement">
+                <input type="text" id="remove" placeholder="removerJS"/>
+            </div>
+            <div class="box">
+            </div>
+            <div id="toDo">
+                <ul></ul>
+                <input type="text" name="toDo" placeholder="Digite um todo"/>
+                <button>Add</button>
+            </div>
+        </div>
+
+
+    <script>
+        var x = 10, y = 5;
+        var result = x + y; 
+        x += 15;
+        console.log(result)
+
+        function soma(numeroUm, numeroDois ){
+            var resultado = numeroUm + numeroDois;
+            return resultado;
+        }
+
+        console.log(soma(1, 2 ))
+
+        function retornaSexoComIF(sexo){
+            if(sexo == 'M'){
+                return 'Vocë é HOMEM';
+            } else if(sexo == 'F') {
+                return 'Vocë é MULHER';
+            } else {
+                return 'Por favor responda com M ou F ;)';
+            }
+        }
+
+        console.log(retornaSexoComIF('F'))
+
+        function retornaSexoComSwitch(sexo){
+            switch(sexo){
+                case 'M':
+                    return 'Vocë é HOMEM';
+                    break;
+                case 'F':
+                    return 'Vocë é MULHER';
+                    break;
+                default:
+                    return 'Por favor responda com M ou F ;)';
+                    break;
+            };
+        }
+
+        console.log(retornaSexoComSwitch('P'));
+
+        //usa sempre que souber o tamanho do intervalo
+        // for( var i = 0; i <= 50; i++) {
+        //     console.log(i, 'for');
+        // }
+
+        //quando nao sabe quantas vezes o fluxo vai ser executado
+        var j = 219345872;
+        // while(j > 50) {
+        //     console.log(j, 'while');
+
+        //     j /= 5;
+        // }
+
+        function exibeAlgoTempo() {
+            console.log('Hello World');
+        }
+
+        //fica executando em 1 em 1 minuto
+        setInterval(exibeAlgoTempo, 1000);
+
+
+        function exibeAlgoTempoDeterminado() {
+            console.log('Hi!!');
+        }
+        //executa apenas uma vez em um determinado tempo de delay
+        setTimeout(exibeAlgoTempoDeterminado, 5000);
+
+        function mostrarAlertaButton() {
+            alert('Passou o mouse')
+        }
+
+        function mostrarAlertaInput() {
+            alert('Digitou')
+        }
+
+        var inputGetElementById = document.getElementById('name');
+        console.log(inputGetElementById, 'inputGetElementById')
+
+        var inputGetElementsByTagName = document.getElementsByTagName('input')[1];
+        console.log(inputGetElementsByTagName, 'inputGetElementsByTagName')
+
+        var inputGetElementsByClassName = document.getElementsByClassName('nome')[0];
+        console.log(inputGetElementsByClassName, 'inputGetElementsByClassName')
+
+        var inputquerySelector = document.querySelector('body div#app input');
+        console.log(inputquerySelector, 'inputquerySelector');
+
+        var inputquerySelectorValor = document.querySelector('input[name=name]');
+        console.log(inputquerySelectorValor, 'inputquerySelectorValor')
+
+        var inputquerySelectorAll = document.querySelectorAll('input');
+        console.log(inputquerySelectorAll, 'inputquerySelectorAll');
+
+        var inputElement = document.querySelector('input[name=dados]');
+        var btnElement = document.querySelector('button.botao');
+        btnElement.onclick = function() {
+            var texto = inputElement.value;
+            alert(texto);
+        }
+
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'https://rocketseat.com.br/');
+       linkElement.setAttribute('title', 'Site Rocketseat');
+
+        var textElement = document.createTextNode('Acessar site da rocketseat' );
+        linkElement.appendChild(textElement);
+
+        var containerElement = document.querySelector('#criarElement');
+        containerElement.appendChild(linkElement);
+
+        var getInputElement = document.querySelector('#remove');
+        containerElement.removeChild(getInputElement);
+
+        var boxElement = document.querySelector('.box');
+        boxElement.style.width = 250;
+        boxElement.style.height = 15;
+        boxElement.style.backgroundColor = 'pink';
+
+    </script>
+    <script src="todos.js"></script>
+    <script src="ajax.js"></script>
+    <script src="promise.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="axios.js"></script>
+    </body>
+</html>
+
